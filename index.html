@@ -36,6 +36,28 @@
     <div id="results"></div>
 
     <!-- Your Code Here -->
+    <script id="source-template" type="text/x-handlebars-template">
+            {{#if apartments}}
+                {{#each apartments}}
+                    <div class="result">
+                    <img src="{{img}}"></img>
+                    <div class="l-addr">Address: {{address}}</div>
+                    <div class="l-price">Price: {{price}}</div>
+                    <div class="l-rooms">No. of Rooms: {{rooms}}</div>
+                    {{#if parking}}
+                        <div class=result><i class="fas fa-parking"></i></div>
+                    {{/if}}
+                    {{#if immediate}}
+                        <div>{{contactDetails.name}}</div>
+                        <div>{{contactDetails.email}}</div>
+                    {{/if}}
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="no-match">Sorry. There are no available matches.</div>
+            {{/if}}
+        
+    </script>
     <!-- You should start doing handlebar stuff here -->
     <!-- Your Code Here -->
 
@@ -47,3 +69,13 @@
 </body>
 
 </html>
+
+{{!-- img: "https://circaoldhouses.com/wp-content/uploads/2017/10/key-hole-house-1.jpg",
+        address: "P. Sherman 42 Wallabe Way, Sydney",
+        price: 2400,
+        rooms: 2,
+        parking: false,
+        immediate: true,
+        contactDetails: {
+            name: "Douglas",
+            email: "doug@less.com" --}}
